@@ -1,0 +1,99 @@
+{
+    "flow": "git",
+    "branches": [
+        {
+            "name": "master",
+            "path": "master",
+            "type": "production",
+            "config": {
+                "hidden": true
+            }
+        },
+        {
+            "name": "develop",
+            "path": "develop",
+            "from": "master",
+            "type": "development",
+            "config": {
+                "hidden": true
+            }
+        },
+        {
+            "name": "test",
+            "path": "test/*",
+            "from": "develop",
+            "type": "test",
+            "config": {
+                "unique": true,
+                "description": "This branch is used for testing purposes.",
+                "actions": [
+                    {
+                        "on": "release",
+                        "action": "delete"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "release",
+            "path": "release/*",
+            "from": "develop",
+            "to": [
+                "master",
+                "develop"
+            ],
+            "config": {
+                "unique": true,
+                "description": "Release branches are created from the develop branch. These branches are used to prepare the codebase for a new production release. The codebase is considered to be in a state of feature complete and in a state of testing. Once the release branch is ready to be released, it is merged into master and develop to update the codebase for the new release."
+            }
+        },
+        {
+            "name": "feature",
+            "path": "feature/*",
+            "from": "develop",
+            "config": {
+                "description": "Feature branches are created from the develop branch. These branches are used to develop new features for the upcoming or a distant future release. When a feature is complete, it is merged into develop."
+            }
+        },
+        {
+            "name": "hotfix",
+            "path": "hotfix/*",
+            "from": "master",
+            "to": [
+                "master",
+                "develop"
+            ],
+            "config": {
+                "description": "Hotfix branches are created from the master branch. These branches are used to develop emergency fixes to the production release. Once the hotfix is complete, it is merged into both master and develop."
+            }
+        },
+        {
+            "name": "bugfix",
+            "path": "bugfix/*",
+            "from": "develop",
+            "config": {
+                "description": "Bugfix branches are created from the develop branch. These branches are used to develop fixes for bugs found in the production release. Once the bugfix is complete, it is merged into develop."
+            }
+        },
+        {
+            "name": "support",
+            "path": "support/*",
+            "from": "master",
+            "config": {
+                "description": "Support branches are created from the master branch. These branches are used to develop fixes for bugs found in the production release. Once the bugfix is complete, it is merged into master and develop."
+            }
+        },
+        {
+            "name": "sync",
+            "path": "sync/*",
+            "from": "master",
+            "to": [
+                "master",
+                "develop"
+            ],
+            "config": {
+                "description": "Sync branches are created from the master branch. These branches are used to sync the master branch with the develop branch. Once the sync is complete, it is merged into master and develop."
+            }
+        }
+    ]
+}
