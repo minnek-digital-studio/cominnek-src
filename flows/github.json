@@ -1,0 +1,45 @@
+{
+    "version": "1.0.0",
+    "branches": [
+        {
+            "name": "master",
+            "path": "master",
+            "type": "production",
+            "config": {
+                "hidden": true
+            }
+        },
+        {
+            "name": "feature",
+            "path": "feature/*",
+            "from": "master",
+            "config": {
+                "description": "Feature branches are created from the master branch. These branches are used to master new features for the upcoming or a distant future release. When a feature is complete, it is merged into master."
+            }
+        },
+        {
+            "name": "hotfix",
+            "path": "hotfix/*",
+            "from": "master",
+            "config": {
+                "description": "Hotfix branches are created from the master branch. These branches are used to master emergency fixes to the production release. Once the hotfix is complete, it is merged into master."
+            }
+        },
+        {
+            "name": "bugfix",
+            "path": "bugfix/*",
+            "from": "master",
+            "config": {
+                "description": "Bugfix branches are created from the master branch. These branches are used to master fixes for bugs found in the production release. Once the bugfix is complete, it is merged into master."
+            }
+        },
+        {
+            "name": "sync",
+            "path": "sync/*",
+            "from": "master",
+            "config": {
+                "description": "Sync branches are created from the master branch. These branches are used to sync the master branch with the master branch. Once the sync is complete, it is merged into master."
+            }
+        }
+    ]
+}
