@@ -19,22 +19,6 @@
             }
         },
         {
-            "name": "test",
-            "path": "test/*",
-            "from": "develop",
-            "type": "test",
-            "config": {
-                "unique": true,
-                "description": "This branch is used for testing purposes.",
-                "actions": [
-                    {
-                        "on": "release",
-                        "action": "delete"
-                    }
-                ]
-            }
-        },
-        {
             "name": "release",
             "path": "release/*",
             "from": "develop",
@@ -81,18 +65,6 @@
             "from": "master",
             "config": {
                 "description": "Support branches are created from the master branch. These branches are used to develop fixes for bugs found in the production release. Once the bugfix is complete, it is merged into master and develop."
-            }
-        },
-        {
-            "name": "sync",
-            "path": "sync/*",
-            "from": "master",
-            "to": [
-                "master",
-                "develop"
-            ],
-            "config": {
-                "description": "Sync branches are created from the master branch. These branches are used to sync the master branch with the develop branch. Once the sync is complete, it is merged into master and develop."
             }
         }
     ]
