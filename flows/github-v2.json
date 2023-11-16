@@ -1,0 +1,53 @@
+{
+    "version": "0.0.1",
+    "branches": [
+        {
+            "name": "master",
+            "path": "master",
+            "type": "production",
+            "config": {
+                "hidden": true
+            }
+        },
+        {
+            "name": "pre-release",
+            "path": "pre-release",
+            "from": "master",
+            "config": {
+                "description": "Prerelease branches are created from the master branch. These branches are used to master the next release. Once the prerelease is complete, it is merged into master."
+            }
+        },
+        {
+            "name": "feature",
+            "path": "feature/*",
+            "from": "pre-release",
+            "config": {
+                "description": "Feature branches are created from the pre-release branch. These branches are used to pre-release new features for the upcoming or a distant future release. When a feature is complete, it is merged into pre-release."
+            }
+        },
+        {
+            "name": "hotfix",
+            "path": "hotfix/*",
+            "from": "pre-release",
+            "config": {
+                "description": "Hotfix branches are created from the pre-release branch. These branches are used to pre-release emergency fixes to the production release. Once the hotfix is complete, it is merged into pre-release."
+            }
+        },
+        {
+            "name": "bugfix",
+            "path": "bugfix/*",
+            "from": "pre-release",
+            "config": {
+                "description": "Bugfix branches are created from the pre-release branch. These branches are used to pre-release fixes for bugs found in the production release. Once the bugfix is complete, it is merged into pre-release."
+            }
+        },
+        {
+            "name": "sync",
+            "path": "sync/*",
+            "from": "pre-release",
+            "config": {
+                "description": "Sync branches are created from the pre-release branch. These branches are used to sync the pre-release branch with the pre-release branch. Once the sync is complete, it is merged into pre-release."
+            }
+        }
+    ]
+}
