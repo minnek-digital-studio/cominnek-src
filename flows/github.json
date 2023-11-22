@@ -1,5 +1,5 @@
 {
-    "version": "1.0.0",
+    "version": "1.1.0",
     "branches": [
         {
             "name": "master",
@@ -39,6 +39,14 @@
             "from": "master",
             "config": {
                 "description": "Sync branches are created from the master branch. These branches are used to sync the master branch with the master branch. Once the sync is complete, it is merged into master."
+            }
+        },
+        {
+            "name": "chore",
+            "path": "chore/*",
+            "from": "master",
+            "config": {
+                "description": "Chore branches are created from the master branch. These branches are used to master changes to the build process or auxiliary tools and libraries such as documentation generation. Once the chore is complete, it is merged into master.",
             }
         }
     ]
