@@ -1,5 +1,5 @@
 {
-    "version": "0.1.0",
+    "version": "0.1.1",
     "branches": [
         {
             "name": "master",
@@ -54,7 +54,7 @@
             "path": "chore/*",
             "from": "master",
             "config": {
-                "description": "Chore branches are created from the master branch. These branches are used to master changes to the build process or auxiliary tools and libraries such as documentation generation. Once the chore is complete, it is merged into master.",
+                "description": "Chore branches are created from the master branch. These branches are used to master changes to the build process or auxiliary tools and libraries such as documentation generation. Once the chore is complete, it is merged into master."
             }
         }
     ]
